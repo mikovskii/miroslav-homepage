@@ -1,4 +1,4 @@
-A personal website [mirolinx](https://mirolinx.vercel.app/)
+A personal website [mslvx](https://mslvx.vercel.app/)
 
 ## 📦 Stack
 
