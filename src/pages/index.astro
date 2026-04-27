@@ -4,6 +4,7 @@ import Layout from '@layouts/Layout.astro'
 import ThemeButton from '@components/ThemeButton.vue'
 import AboutMe from '@components/AboutMe.vue'
 import SocialLinks from '@components/SocialLinks.vue'
+import Currently from '@components/Currently.vue'
 import ProjectsAccordion from '@components/ProjectsAccordion.vue'
 import AccordionAboutMe from '@components/mobile/AccordionAboutMe.vue'
 import Footer from '@components/Footer.vue'
@@ -35,6 +36,7 @@ import listThemes from '../data/listThemes.json'
       <div class="lg:mr-24 lg:w-1/2">
         <AboutMe class="mb-2 duration-300" />
         <SocialLinks />
+        <Currently />
         <AccordionAboutMe class="mt-10 lg:hidden" client:load />
       </div>
       <div class="w-full lg:w-1/2 mt-5 lg:mt-0">
