@@ -53,9 +53,21 @@ function toggleProjectsAccordion(): void {
             :key="project.name"
             class="mb-3 flex flex-col last:mb-0 lg:rounded-lg lg:border-2 lg:border-primary lg:p-3"
           >
-            <div class="mb-1 flex items-center lg:mb-2">
-              <svg xmlns="http://www.w3.org/2000/svg" class="mr-1 h-5 w-5 fill-primary" viewBox="0 0 24 24"><path d="M6.615 21q-.69 0-1.152-.462Q5 20.075 5 19.385V4.615q0-.69.463-1.152Q5.925 3 6.615 3h10.77q.69 0 1.152.463q.463.462.463 1.152v14.77q0 .69-.462 1.152q-.463.463-1.153.463zm0-1h10.77q.23 0 .423-.192q.192-.193.192-.423V4.615q0-.23-.192-.423Q17.615 4 17.385 4H16v6.115l-2-1.192l-2 1.192V4H6.615q-.23 0-.423-.192Q6 4.385 6 4.615v14.77q0 .23.192.423q.193.192.423.192M6 20V4zm6-9.885l2-1.192l2 1.192l-2-1.192z" /></svg>
-              <a class="text-lg text-primary duration-300" :href="project.html_url" target="_blank">{{ project.name }}</a>
+            <div class="mb-1 flex items-center justify-between gap-3 lg:mb-2">
+              <div class="flex min-w-0 items-center">
+                <svg xmlns="http://www.w3.org/2000/svg" class="mr-1 h-5 w-5 shrink-0 fill-primary" viewBox="0 0 24 24"><path d="M6.615 21q-.69 0-1.152-.462Q5 20.075 5 19.385V4.615q0-.69.463-1.152Q5.925 3 6.615 3h10.77q.69 0 1.152.463q.463.462.463 1.152v14.77q0 .69-.462 1.152q-.463.463-1.153.463zm0-1h10.77q.23 0 .423-.192q.192-.193.192-.423V4.615q0-.23-.192-.423Q17.615 4 17.385 4H16v6.115l-2-1.192l-2 1.192V4H6.615q-.23 0-.423-.192Q6 4.385 6 4.615v14.77q0 .23.192.423q.193.192.423.192M6 20V4zm6-9.885l2-1.192l2 1.192l-2-1.192z" /></svg>
+                <a class="truncate text-lg text-primary duration-300 hover:text-secondary" :href="project.html_url" target="_blank" rel="noopener noreferrer">{{ project.name }}</a>
+              </div>
+              <div class="flex shrink-0 items-center gap-2 text-sm text-primary-variant duration-300" aria-label="GitHub stats">
+                <span class="flex items-center gap-1" :title="`${project.stars ?? 0} stars`">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 fill-current" viewBox="0 0 24 24"><path d="m12 17.27l5.18 3.13l-1.64-5.89L20.1 10.5l-6-.52L12 4.4L9.9 9.98l-6 .52l4.56 4.01l-1.64 5.89z" /></svg>
+                  {{ project.stars ?? 0 }}
+                </span>
+                <span class="hidden items-center gap-1 lg:flex" :title="`${project.forks ?? 0} forks`">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 fill-current" viewBox="0 0 24 24"><path d="M7 5a3 3 0 1 1 4 2.83V9h2V7.83A3.001 3.001 0 1 1 15 5a2.99 2.99 0 0 1-.78 2H15a3 3 0 0 1 3 3v3.17a3.001 3.001 0 1 1-2 0V10a1 1 0 0 0-1-1h-2v5.17a3.001 3.001 0 1 1-2 0V9H9a1 1 0 0 0-1 1v4.17a3.001 3.001 0 1 1-2 0V10a3 3 0 0 1 3-3h.78A2.99 2.99 0 0 1 7 5" /></svg>
+                  {{ project.forks ?? 0 }}
+                </span>
+              </div>
             </div>
             <span class="text-secondary duration-300">{{ project.description }}</span>
             <div class="hidden items-center lg:flex">
